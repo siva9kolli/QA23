@@ -2,6 +2,7 @@ package QA23Actions;
 
 import QA23Waits.SeleniumWaits;
 import org.openqa.selenium.*;
+import org.openqa.selenium.support.ui.Select;
 
 public class SeleniumActions {
     WebDriver driver;
@@ -12,6 +13,48 @@ public class SeleniumActions {
         seleniumWaits = new SeleniumWaits(driver);
     }
 
+    public boolean clickOnWebElementUsingText(String tag, String text){
+        try {
+            driver.findElement(By.xpath("//"+tag+"[text()='" + text + "']")).click();
+            return true;
+        }catch (Exception e){
+         return false;
+        }
+    }
+
+    /**
+     * Select an item from the list
+     * @param element
+     * @param data
+     * @param typeSelect
+     * @return
+     */
+    public boolean selectValueFromDropDown(WebElement element, String data, String typeSelect){
+       try{
+           Select select = new Select(element);
+           switch (typeSelect){
+               case "index":
+                   select.selectByIndex(Integer.parseInt(data));
+                   break;
+               case "value":
+                   select.selectByValue(data);
+                   break;
+               case "text":
+                   select.selectByVisibleText(data);
+                   break;
+           }
+           return true;
+       }catch (Exception e){
+
+           return false;
+       }
+    }
+
+    /**
+     * Wait for element using webdriver wait and click on the element
+     * @param element - webelement
+     * @return boolean value
+     */
     public boolean waitAndClickOnElement(WebElement element){
         try{
             seleniumWaits.waitForElementToBeClickable(element).click();
