@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 public class SpanDealTest extends QA23Base {
 
     /**
-     * Test
+     * Testing span test
      */
     @Test
     public void testSpanDeal(){
