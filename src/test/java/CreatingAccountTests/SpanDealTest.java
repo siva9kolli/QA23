@@ -6,6 +6,9 @@ import org.testng.annotations.Test;
 
 public class SpanDealTest extends QA23Base {
 
+    /**
+     * Testing span test
+     */
     @Test
     public void testSpanDeal(){
         driver.get("https://www.snapdeal.com/product/urbanmark-blue-mens-sneakers/635684595927#bcrumbSearch:shoes");
