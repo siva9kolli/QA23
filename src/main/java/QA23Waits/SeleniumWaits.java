@@ -18,9 +18,9 @@ public class SeleniumWaits {
     }
 
     /**
-     * waitForElementToBeClickable
+     *  wait for element to be clickable
      * @param element
-     * @return
+     * @return webelement
      */
     public WebElement waitForElementToBeClickable(WebElement element){
        return webDriverWait.until(ExpectedConditions.elementToBeClickable(element));
