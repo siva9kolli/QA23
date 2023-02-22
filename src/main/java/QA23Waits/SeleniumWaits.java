@@ -17,6 +17,11 @@ public class SeleniumWaits {
         webDriverWait = new WebDriverWait(driver, Duration.ofSeconds(waitTime.EXPLICITWAIT));
     }
 
+    /**
+     *  wait for element to be clickable
+     * @param element
+     * @return webelement
+     */
     public WebElement waitForElementToBeClickable(WebElement element){
        return webDriverWait.until(ExpectedConditions.elementToBeClickable(element));
     }
